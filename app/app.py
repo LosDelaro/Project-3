@@ -51,17 +51,93 @@ def country_count():
             """)
 
     df = pd.read_sql(query, engine)
+#     # df.info()
+#     # df2 = df.volcano_name.value_counts().reset_index()
+#     # df2.columns = ["volcano_name", "counts"]
+
+    data = json.loads(df.to_json(orient="records"))
+#     # data2 = json.loads(df2.to_json(orient="records"))
+
+#     # return({"raw_data": data, "volcanoes": data2})
+    return data
+###############################################################
+@app.route("/api/v1.0/show_count")
+def show_count():
+    """Get show"""
+    query = text(f"""
+                SELECT
+                    Show,
+                    count(Show) as num_show
+                FROM
+                    Map_data
+                
+                group by
+                   Show;
+            """)
+
+    df = pd.read_sql(query, engine)
     # df.info()
     # df2 = df.volcano_name.value_counts().reset_index()
     # df2.columns = ["volcano_name", "counts"]
 
-    data = json.loads(df.to_json(orient="records"))
+    data1 = json.loads(df.to_json(orient="records"))
     # data2 = json.loads(df2.to_json(orient="records"))
 
     # return({"raw_data": data, "volcanoes": data2})
-    return data
-#############################################################
+    return data1
 
+###########################################################################
+@app.route("/api/v1.0/region_count")
+def region_count():
+    """Get Region"""
+    query = text(f"""
+                SELECT
+                    Region,
+                    count(Region) as num_region
+                FROM
+                    Map_data
+                
+                group by
+                   Region;
+            """)
+
+    df = pd.read_sql(query, engine)
+    # df.info()
+    # df2 = df.volcano_name.value_counts().reset_index()
+    # df2.columns = ["volcano_name", "counts"]
+
+    data2 = json.loads(df.to_json(orient="records"))
+    # data2 = json.loads(df2.to_json(orient="records"))
+
+    # return({"raw_data": data, "volcanoes": data2})
+    return data2
+##########################################################################
+@app.route("/api/v1.0/city_count")
+def city_count():
+    """Get Region"""
+    query = text(f"""
+                SELECT
+                    City,
+                    count(City) as num_city
+                FROM
+                    Map_data
+                
+                group by
+                   City;
+            """)
+
+    df = pd.read_sql(query, engine)
+    # df.info()
+    # df2 = df.volcano_name.value_counts().reset_index()
+    # df2.columns = ["volcano_name", "counts"]
+
+    data3 = json.loads(df.to_json(orient="records"))
+    # data2 = json.loads(df2.to_json(orient="records"))
+
+    # return({"raw_data": data, "volcanoes": data2})
+    return data3
+
+######################################################################
 @app.after_request
 def add_header(r):
     """
