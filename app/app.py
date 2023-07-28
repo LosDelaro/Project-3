@@ -28,15 +28,17 @@ def about_us():
     # Return template and data
     return render_template("about_us.html")
 
-@app.route("/plots")
-def plots():
+@app.route("/dashboard")
+def plotly():
     # Return template and data
-    return render_template("plots.html")
+    return render_template("dashboard.html")
 
-@app.route("/map")
-def map():
+
+
+@app.route("/df_profile")
+def df_profile():
     # Return template and data
-    return render_template("map.html")
+    return render_template("df_profile.html")
 
 ##########################################################################
 
@@ -226,6 +228,41 @@ def map_data():
 
 
 #######################################################################
+@app.route("/api/v1.0/dashboard_data/<show>")
+def dashboard_data(show):
+    """Get show"""
+    if show != "All":
+        query = text(f"""
+                    SELECT
+                        *
+                    FROM
+                        Map_data
+                    WHERE
+                    Show = "{show}";
+                """)
+    else:
+        query = text(f"""
+            SELECT
+                *
+            FROM
+                Map_data;
+        """)
+
+    df = pd.read_sql(query, engine)
+    
+    df2 = df.Season.value_counts().reset_index()
+    df2.columns = ["season", "counts"]
+
+    df3 = df.Region.value_counts().reset_index()
+    df3.columns = ["region", "counts"]
+
+    data = json.loads(df.to_json(orient="records"))
+    data2 = json.loads(df2.to_json(orient="records"))
+    data3 = json.loads(df3.to_json(orient="records"))
+
+    return({"raw_data": data, "seasons": data2, "regions": data3})
+    
+##########################################################################
 
 @app.after_request
 def add_header(r):
