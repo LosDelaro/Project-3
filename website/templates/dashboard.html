@@ -38,82 +38,56 @@
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
     <!-- added bootswatch -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
-     -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/united/bootstrap.min.css" integrity="sha384-JW3PJkbqVWtBhuV/gsuyVVt3m/ecRJjwXC3gCXlTzZZV+zIEEl6AnryAriT7GWYm" crossorigin="anonymous">
-    <!-- added css stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/darkly/bootstrap.min.css" integrity="sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN" crossorigin="anonymous">
+    
+     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/united/bootstrap.min.css" integrity="sha384-JW3PJkbqVWtBhuV/gsuyVVt3m/ecRJjwXC3gCXlTzZZV+zIEEl6AnryAriT7GWYm" crossorigin="anonymous"> -->
+   
+     <!-- added css stylesheet -->
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
+<!-- webpage style and buttons for nave bar -->
 <body text="black">
-    <!-- added NAV bar -->
-    <!-- <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
         <div class="container-fluid">
-         
-          <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/about_us">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/dashboard">Dashboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/df_profile">Explain data</a>
-              </li> -->
-    <!-- <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="light">
-      <div class="container-fluid">
-                  
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about_us">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/dashboard">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/df_profile">Explain data</a>
-          </li> -->
-          <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
-        <div class="container-fluid">
-
-            <!-- <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation"> -->
         <div class="collapse navbar-collapse" id="navbarColor03">
           <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="/">Home</a>
+          <li class="nav-item">
+              <a class="nav-link active" href="/">
+              <button type="button" class="btn btn-outline-dark" fdprocessedid="e12od" href="/">Home</button>
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about_us">About Us</a>
+              <a class="nav-link" href="/about_us">
+              <button type="button" class="btn btn-outline-dark" fdprocessedid="e12od" href="/about_us">About Us</button>
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/dashboard">Dashboard</a>
+              <a class="nav-link" href="/dashboard">
+                <button type="button" class="btn btn-outline-dark" fdprocessedid="e12od" href="/dashboard">Dashboard</button>
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/df_profile">Explain data</a>
+              <a class="nav-link" href="/df_profile">
+                <button type="button" class="btn btn-outline-dark" fdprocessedid="e12od" href="/df_profile">Explain data</button>
+              </a>
             </li>                      
             
           </div>
         </div>
-      </nav>
-    <div class="container-fluid">
+        <!-- format the filter for the viz's -->
+        </nav>
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 jumbotron text-center">
+          
             <h1>Anthony Bourdain Dashboard</h1>
             <br/>
-            <div class="card text-white bg-primary mb-3">
+            <div class="card text-primary mb-3">
                 <div class="card-header">Filters</div>
                 <div class="card-body">
                   <h4 class="card-title">Anthony Bourdain Shows</h4>
-                  <p class="card-text">Use the interactive charts below to explore the dataset</p>
-                  <select id="show_dropdown", onchange = 'doWork()',style="color:black !important;">
+                  <p class="card text-primary">Use the interactive charts below to explore the dataset</p>
+                  <select id="show_dropdown", onchange = 'doWork()'>
                     <option>All</option>
                     <option selected>No Reservations</option>
                     <option>Parts Unknown</option>
@@ -145,5 +119,5 @@
 
     <!-- JAVASCRIPT -->
     <script src="static/js/plots.js"></script>
-    </body>
+  </body>
 </html>
