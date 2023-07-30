@@ -1,0 +1,9 @@
+body {
+    background-image: url("anthony.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:200px;
+    width: 200px; /* Adjust the background size to cover the whole page */
+    backdrop-filter: blur(10000x);
+  }
+  
