@@ -9,7 +9,7 @@ function makeBarPlot(regions, show) {
       x: labels,
       y: region_values,
       type: 'bar',
-      marker: {color: 'tropic'}
+      marker: {color: "tropic"}
     };
     
     let data = [trace];
@@ -27,12 +27,14 @@ function makePiePlot(seasons, show) {
     // Create an array of category labels
     let labels = seasons.map(x => x.season);
 
+
     // @ADD YOUR CODE HERE
     let trace = {
         values: season_values,
         labels: labels,
         hole: .4,
-        type: 'pie'
+        type: 'pie',
+        
     };
 
     let data = [trace];

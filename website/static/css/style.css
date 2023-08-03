@@ -5,3 +5,16 @@
 p {
   color: black; /* Change to your desired font color */
 }
+
+
+.filter-select {
+  font-size: 24px;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+

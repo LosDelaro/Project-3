@@ -46,7 +46,7 @@
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 </head>
 <!-- webpage style and buttons for nave bar -->
-<body text="black">
+<body>
   <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
         <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarColor03">
@@ -68,11 +68,14 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/df_profile">
-                <button type="button" class="btn btn-outline-dark" fdprocessedid="e12od" href="/df_profile">Explain data</button>
+                <button type="button" class="btn btn-outline-dark" fdprocessedid="e12od" href="/df_profile">Data Profile</button>
               </a>
-            </li>                      
-            
-          </div>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="/resources">
+                <button type="button" class="btn btn-outline-dark" fdprocessedid="e12od" href="/resources">Resources</button>
+              </a>
+            </li>   
         </div>
         <!-- format the filter for the viz's -->
         </nav>
@@ -83,16 +86,15 @@
             <h1>Anthony Bourdain Dashboard</h1>
             <br/>
             <div class="card text-primary mb-3">
-                <div class="card-header">Filters</div>
-                <div class="card-body">
-                  <h4 class="card-title">Anthony Bourdain Shows</h4>
-                  <p class="card text-primary">Use the interactive charts below to explore the dataset</p>
-                  <select id="show_dropdown", onchange = 'doWork()'>
-                    <option>All</option>
-                    <option selected>No Reservations</option>
-                    <option>Parts Unknown</option>
-                    <option>A Cook's Tour</option>
-                    <option>The Layover</option>
+            <div class="card-body">
+                  <h1 class="card-title">Anthony Bourdain Shows</h1>
+                  <p class="card text-primary">Use the filter below to select the interactive charts to explore the dataset</p>
+                  <select id="show_dropdown", onchange = 'doWork()',id="filter" class="filter-select">
+                      <option>All</option>
+                      <option selected>No Reservations</option>
+                      <option>Parts Unknown</option>
+                      <option>A Cook's Tour</option>
+                      <option>The Layover</option>
                     
                 </select>
                   

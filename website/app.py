@@ -40,6 +40,11 @@ def df_profile():
     # Return template and data
     return render_template("df_profile.html")
 
+@app.route("/resources")
+def resources():
+    # Return template and data
+    return render_template("resources.html")
+
 ##########################################################################
 
 @app.route("/api/v1.0/country_count")
